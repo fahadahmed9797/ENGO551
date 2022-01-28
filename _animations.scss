@@ -1,0 +1,79 @@
+// animnation variables
+:where(html) {
+  --animation-shake-x-delay: shake-x-delay 0.75s var(--ease-out-5);
+  --animation-shake-y-delay: shake-y-delay 0.75s var(--ease-out-5);
+}
+
+// animations
+@keyframes shake-x-delay {
+  0%,
+  75%,
+  100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-5%);
+  }
+  30% {
+    transform: translateX(5%);
+  }
+  45% {
+    transform: translateX(-5%);
+  }
+  60% {
+    transform: translateX(5%);
+  }
+}
+@keyframes shake-y-delay {
+  0%,
+  75%,
+  100% {
+    transform: translateY(0%);
+  }
+  15% {
+    transform: translateY(-5%);
+  }
+  30% {
+    transform: translateY(5%);
+  }
+  45% {
+    transform: translateY(-5%);
+  }
+  60% {
+    transform: translateY(5%);
+  }
+}
+
+// animations classes
+.slide-fade-out-right {
+  animation: var(--animation-fade-out) forwards,
+    var(--animation-slide-out-right);
+  animation-timing-function: var(--ease-1);
+}
+.slide-fade-in-left {
+  animation: var(--animation-fade-in), var(--animation-slide-in-left);
+  animation-timing-function: var(--ease-1);
+}
+.spin {
+  animation: var(--animation-spin);
+  animation-duration: 1s;
+}
+.bounce {
+  animation: var(--animation-bounce);
+  animation-duration: 2s;
+}
+.shake-x-delay {
+  animation: var(--animation-shake-x-delay);
+  // animation-timing-function: 1.2s;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+.shake-y-delay {
+  animation: var(--animation-shake-y-delay);
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+.shake-both {
+  animation: var(--animation-shake-x), var(--animation-shake-y);
+  animation-timing-function: 1.2s;
+}
